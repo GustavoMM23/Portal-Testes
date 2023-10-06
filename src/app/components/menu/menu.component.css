@@ -1,0 +1,15 @@
+.custom-menu-transition .po-menu-item-link {
+    transition: transform 0.3s ease-out;
+    transform-origin: left;
+    will-change: transform; /* Adding will-change to help with performance */
+  }
+  
+  .custom-menu-transition.po-collapsed .po-menu-item-link {
+    transform: translateX(-100%);
+  }
+  
+  /* Optional: Adjust the transition for better fluidity */
+  .po-menu-item-link {
+    transition: transform 0.2s ease-out;
+  }
+  

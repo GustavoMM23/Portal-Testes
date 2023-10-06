@@ -1,0 +1,29 @@
+<div class="po-wrapper">
+
+  <po-menu #menu
+  
+  
+  
+  [p-menus]="menus" 
+  [p-collapsed]="isCollapsed"
+  [p-filter]="true" 
+  p-logo="../../../assets/sua-logo.png"
+   p-short-logo="../../../assets/sua-logo.png"
+   (mouseenter)="onMenuMouseEnter()"
+   (mouseleave)="onMenuMouseLeave()"
+   class="custom-menu-transition">
+  
+   <div *p-menu-header-template class="po-p-2 po-font-subtitle sample-menu-header-text-color">
+
+    <p>Bem Vindo:</p>
+    <p>
+      <b>{{ getUserName() }}</b>
+  !
+    </p>
+  </div>
+  
+  </po-menu>
+
+  <router-outlet></router-outlet>
+  </div>
+  

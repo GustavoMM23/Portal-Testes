@@ -1,0 +1,26 @@
+.page {
+    padding-top: 80px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .po-popup {
+    color: #ffffff;
+    background-color: #045b8f;
+    box-shadow: #6d6a6a56;
+    border-color: var(--border-color);
+    border-radius: 3px;
+    box-shadow: var(--shadow-popup-box-shadow-popup);
+    left: 0;
+    max-width: 300px;
+    position: fixed;
+    text-align: left;
+    width: auto;
+    word-wrap: break-word;
+    z-index: 3
+  }

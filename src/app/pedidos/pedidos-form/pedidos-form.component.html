@@ -1,0 +1,20 @@
+<po-page-edit (p-cancel)="cancel()" [p-title]="title" [p-disable-submit]="formPedidos.invalid">
+  <form #formPedidos="ngForm">
+    <po-divider class="po-md-12" p-label="Empresas"></po-divider>
+    <po-table title="Empresas" p-sort="true" [p-columns]="columns" [p-items]="addedProducts"></po-table>
+    <po-divider class="po-md-12"></po-divider>
+    <div class="po-row">
+      <po-button class="po-md-3" p-icon="po-icon-cart" p-label="Adicionar uma Empresa" (p-click)="modal.open()"></po-button>
+    </div>
+  </form>
+</po-page-edit>
+<po-modal #modal p-title="Adicionar Uma Empresa" p-size="auto">
+  <form #productForm="ngForm">
+    <po-input class="po-md-5" name="id" [(ngModel)]="newProduct.id" p-label="ID Da Empresa:"></po-input>
+    <po-input class="po-md-5" name="code" [(ngModel)]="newProduct.code" p-label="Nome da Empresa:"></po-input>
+  </form>
+  <po-modal-footer [p-disabled-align]="false">
+    <po-button p-label="Cancelar" (p-click)="modal.close()"></po-button>
+    <po-button p-kind="primary" p-label="Confirmar" (p-click)="addProduct(productForm)"></po-button>
+  </po-modal-footer>
+</po-modal>

@@ -1,0 +1,43 @@
+<div class="po-wrapper"></div>
+<style>
+  .sample-container {
+    margin-top: 50px;
+  }
+</style>
+
+<po-toolbar
+  [p-profile]="profile"
+  [p-profile-actions]="profileActions"
+  [p-notification-actions]="notificationActions"
+  [p-notification-number]="getNotificationNumber()"
+>
+</po-toolbar>
+
+<po-modal #Modal p-title="Configurações">
+  <po-tabs>
+    <po-tab p-active p-label="Configurações da Conta">
+      <po-widget
+      class=" po-lg-12"
+      p-title="Avatar"
+    >
+      <po-avatar class="po-md-4" p-size="lg" > </po-avatar>
+  
+      <div class="po-md-8">
+        <po-input name="nome" p-label="Nome"> </po-input>
+        </div>
+    </po-widget>
+    </po-tab>
+
+    <po-tab p-label="Senha e Segurança">
+
+      <po-input name="input" p-label="Senha Atual"> </po-input>
+
+      <po-input name="input" p-label="Nova senha"> </po-input>
+
+    </po-tab>
+
+    <po-modal-footer>
+      <po-button p-label="Fechar" > </po-button>
+      <po-button p-label="Salvar" p-kind="primary" > </po-button>
+    </po-modal-footer>
+

@@ -1,0 +1,46 @@
+<div class="po-wrapper">
+  <po-page-list p-title="Empresas Cadastradas" [p-disclaimer-group]="disclaimerGroup" [p-filter]="filter" [p-breadcrumb]="breadcrumb" [p-actions]="actions">
+    <po-table #table p-sort="true" [p-actions]="tableActions" [p-columns]="columns" [p-items]="pedidos" [p-loading]="loading" [p-show-more-disabled]="!hasNext" (p-sort-by)="sortBy($event)" (p-show-more)="showMore($event)"></po-table>
+  </po-page-list>
+  <po-modal #advancedEdit p-size="auto" p-title="Editando o Código: {{ nome_razao_social }}">
+    <div style="position: relative">
+      <po-stepper #stepper p-orientation="horizontal" p-step-icons p-step-size="32">
+        <po-step p-label="Dados Gerais">
+          <form #personalForm="ngForm">
+            <div class="po-row"></div>
+          </form>
+        </po-step>
+        <po-step p-label="Endereço"></po-step>
+        <po-step p-label="Financeiro"></po-step>
+      </po-stepper>
+    </div>
+    <po-modal-footer [p-disabled-align]="false">
+      <po-button p-label="Fechar" (click)="closeAdvancedEditModal()"></po-button>
+      <po-button p-label="Finalizar"></po-button>
+    </po-modal-footer>
+  </po-modal>
+  <po-modal #visualizarModal p-size="auto" p-title="Visualizando a Empresa: {{ nome_razao_social }} ">
+    <po-tabs>
+      <po-tab p-active p-label="Serviços">
+        <po-button p-label="Adicionar Novo" p-kind="primary" p-icon="po-icon-user-add"></po-button>
+        <po-table #table p-sort="true" [p-actions]="tableActions2" [p-columns]="columnsservicos" [p-items]="pedidos2" [p-loading]="loading" [p-show-more-disabled]="!hasNext" (p-sort-by)="sortBy($event)" (p-show-more)="showMore($event)"></po-table>
+        <style>
+          .po-md-6[readonly] {
+            background-color: #f0f0f015;
+            opacity: 0.8;
+            pointer-events: none;
+          }
+        </style>
+      </po-tab>
+      <po-tab p-label="Clientes">
+        <po-button p-label="Adicionar Novo" p-kind="primary" p-icon="po-icon-user-add"></po-button>
+        <po-table #table p-sort="true" [p-actions]="tableActions2" [p-columns]="columnsclientes" [p-items]="pedidos3" [p-loading]="loading" [p-show-more-disabled]="!hasNext" (p-sort-by)="sortBy($event)" (p-show-more)="showMore($event)"></po-table>
+      </po-tab>
+      <po-tab p-label="Notas">
+        <po-button p-label="Adicionar Novo" p-kind="primary" p-icon="po-icon-user-add"></po-button>
+        <po-table #table p-sort="true" [p-actions]="tableActions2" [p-columns]="columns" [p-items]="pedidos" [p-loading]="loading" [p-show-more-disabled]="!hasNext" (p-sort-by)="sortBy($event)" (p-show-more)="showMore($event)"></po-table>
+      </po-tab>
+      <po-tab p-label="Editar Cadastro">
+        <po-button p-label="Adicionar Novo" p-kind="primary" p-icon="po-icon-user-add"></po-button>
+        <po-table #table p-sort="true" [p-actions]="tableActions2" [p-columns]="columns" [p-items]="pedidos" [p-loading]="loading" [p-show-more-disabled]="!hasNext" (p-sort-by)="sortBy($event)" (p-show-more)="showMore($event)"></po-table>
+      </po-tab>

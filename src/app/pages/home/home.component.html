@@ -1,0 +1,33 @@
+<po-page-default p-title="Dashboards" [p-breadcrumb]="breadcrumb">
+    <div class="po-row">
+      <div class="po-md-12 po-lg-6">
+    </div>
+    
+    <po-tabs>
+    
+      <po-tab  p-label="Geral" p-active>
+        <po-chart
+        class="po-md-12 po-mt-2"
+        p-title="Projeto Teste - LOGS Alterações - W.I.P"
+        [p-options]="options"
+        [p-categories]="categories"
+        [p-series]="participationByCountryInWorldExports"
+        [p-type]="participationByCountryInWorldExportsType"
+      >
+      </po-chart>
+
+      <po-chart
+        class="po-md-12 po-mt-2"
+        p-title="Projeto Teste - W.I.P"
+        [p-options]="optionsColumn"
+        [p-categories]="categoriesColumn"
+        [p-series]="evolutionOfCoffeeAndSomeCompetitors"
+      >
+      </po-chart>
+    
+    
+      </po-tab>
+               
+    </po-tabs>
+    
+    
